@@ -1,7 +1,6 @@
 import os
 
 
-ruta = '/home/manuel/Descargas'
 
 def Creador_Carpetas(ruta):
 

@@ -20,7 +20,7 @@ folders = ['IMAGENES', 'TEXTO', 'CARPETAS_COMPRIMIDAS', 'CODIGO', 'OTROS', 'VIDE
 #------------------------------------------------------sistema operativo-----------------------------------
 
 if sistema == "Windows":
-	ruta = "C:\{}\Downloads".format(user)
+	ruta = "C:\Users\{}\Downloads".format(user)
 	print(sistema)
 if sistema == "Linux": 
 	ruta = '/home/'+ user +'/Descargas'
@@ -29,7 +29,6 @@ else:
 	print(f"el sistema: {sistema} no es compatible con ese sistema")
 
 
-interfaz_grafica.Interfaz()
 
 
 #---------------------------------------------------creacion de carpetas----------------------------------------------------
@@ -43,5 +42,5 @@ Creador_Carpetas.Creador_Carpetas(ruta)
 Organizador.Organizar(ruta, folders) 
 #-----------------------------------------------------guardado-------------------------------------------------------------
 
-
+interfaz_grafica.Interfaz()
 

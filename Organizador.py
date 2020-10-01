@@ -1,12 +1,11 @@
 import os
 import shutil
-ruta = '/home/manuel/Descargas'
+
 
 tiposCarpetas = ['IMAGENES', 'TEXTO', 'CARPETAS_COMPRIMIDAS', 'CODIGO', 'OTROS', 'VIDEOS']
 
 folders = ['IMAGENES', 'TEXTO', 'CARPETAS_COMPRIMIDAS', 'CODIGO', 'OTROS', 'VIDEOS']
 
-lista = os.listdir(ruta)
 
 finalImagenes = ('.jpeg', '.png', '.jpg', '.raw', '.JPG','.JPEG', '.JPG', '.gif', '.RAW', '.psd', '.BMP' )
 finalVideos = ('.mp4', '.flv', '.mkv', '.avi', 'm4v', '.mov', '.mpg', '.mpeg', 'wmv')
@@ -15,6 +14,8 @@ finalCarpetasComprimidas = ('.zip', '.rar', '.7z', 'gz', 'gzip', 'tar', 'tgz')
 finalCodigo = ('.py', '.pyw', '.js', '.cs', '.html')
 
 def Organizar(ruta, folders):
+
+    lista = os.listdir(ruta)
 
     for i in range(len(lista)):
 

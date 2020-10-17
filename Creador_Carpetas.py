@@ -2,9 +2,9 @@ import os
 
 
 
-def Creador_Carpetas(ruta):
+def Creador_Carpetas(ruta, tiposCarpetas):
 
-	tiposCarpetas = ['IMAGENES', 'TEXTO', 'CARPETAS_COMPRIMIDAS', 'CODIGO', 'OTROS', 'VIDEOS']
+
 
 	os.chdir(ruta)
 	ruta_lista = os.listdir()

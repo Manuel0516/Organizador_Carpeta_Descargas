@@ -5,56 +5,58 @@ import Creador_Carpetas
 import Organizador
 import getpass
 import platform
-import interfaz_grafica
 import Comprobador
-ruta = ""
 
-sistema = platform.system()
+def ejecutar(Contador):
+	
+	ruta = ""
 
-
-
-user=getpass.getuser()
-
-tiposCarpetas = ['IMAGENES', 'TEXTO', 'CARPETAS_COMPRIMIDAS', 'CODIGO', 'OTROS', 'VIDEOS', '3D', 'PROGRAMAS']
-
-folders = ['IMAGENES', 'TEXTO', 'CARPETAS_COMPRIMIDAS', 'CODIGO', 'OTROS', 'VIDEOS', '3D', 'PROGRAMAS']
+	sistema = platform.system()
 
 
-#------------------------------------------------------sistema operativo-----------------------------------
-if sistema == "Windows":
-	ruta='C:\\Users\\{}\\Downloads'.format(user)
+	user=getpass.getuser()
+
+	tiposCarpetas = ['IMAGENES', 'TEXTO', 'CARPETAS_COMPRIMIDAS', 'CODIGO', 'OTROS', 'VIDEOS', '3D', 'PROGRAMAS']
+
+	folders = ['IMAGENES', 'TEXTO', 'CARPETAS_COMPRIMIDAS', 'CODIGO', 'OTROS', 'VIDEOS', '3D', 'PROGRAMAS']
 
 
-if sistema == "Linux": 
-	ruta = '/home/'+ user +'/Descargas'
-
-else:
-	print(f"el sistema: {sistema} no es compatible con ese sistema")
+	#------------------------------------------------------sistema operativo-----------------------------------
+	if sistema == "Windows":
+		ruta='C:\\Users\\{}\\Downloads'.format(user)
 
 
+	if sistema == "Linux": 
+		ruta = '/home/'+ user +'/Descargas'
+
+	else:
+		print(f"el sistema: {sistema} no es compatible con ese sistema")
 
 
-#---------------------------------------------------creacion de carpetas----------------------------------------------------
 
-Creador_Carpetas.Creador_Carpetas(ruta, tiposCarpetas)
-try:
-	Comprobador.Comprobar(ruta, folders)
-except OSError:
-	Comprobador.Comprobar(ruta, folders)
 
-#----------------------------------------------------clasificado-----------------------------------------------------------
-try:
-	Organizador.Organizar(ruta, folders, tiposCarpetas)
-except OSError:
-	while True:
+	#---------------------------------------------------creacion de carpetas----------------------------------------------------
+
+	Creador_Carpetas.Creador_Carpetas(ruta, tiposCarpetas)
+	try:
 		Comprobador.Comprobar(ruta, folders)
-		try:
-			Organizador.Organizar(ruta, folders, tiposCarpetas)
-			break
-		except:
+	except OSError:
+		Comprobador.Comprobar(ruta, folders)
+
+	#----------------------------------------------------clasificado-----------------------------------------------------------
+	try:
+		Organizador.Organizar(ruta, folders, tiposCarpetas, Contador)
+
+	except OSError:
+		while True:
 			Comprobador.Comprobar(ruta, folders)
+			try:
+				Organizador.Organizar(ruta, folders, tiposCarpetas)
+				break
+			except:
+				Comprobador.Comprobar(ruta, folders)
 
-#-----------------------------------------------------guardado-------------------------------------------------------------
+	#-----------------------------------------------------guardado-------------------------------------------------------------
 
-interfaz_grafica.Interfaz()
+	
 

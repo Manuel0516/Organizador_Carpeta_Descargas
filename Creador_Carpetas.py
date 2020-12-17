@@ -3,9 +3,7 @@ import os
 
 
 def Creador_Carpetas(ruta, tiposCarpetas):
-
-
-
+	
 	os.chdir(ruta)
 	ruta_lista = os.listdir()
 

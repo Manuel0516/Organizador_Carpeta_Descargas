@@ -63,7 +63,6 @@ def Organizar(ruta, folders, tiposCarpetas):
                     print(f"el archivo: {lista[i]} se ha movido a OTROS")
                     
                 
-                
 
             except:
                 shutil.move(lista[i], ruta)

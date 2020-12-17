@@ -69,4 +69,3 @@ def Comprobar(ruta, folders):
 
 			if lista[i] in archivos["OTROSA"]:
 				os.rename(lista[i], "1" + lista[i])
-

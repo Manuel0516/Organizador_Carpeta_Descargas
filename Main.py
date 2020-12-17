@@ -91,4 +91,3 @@ def botonCerrar():
 botonEj=Button(miFrame, text="Organizar", font=("arial", 20, "bold"), fg="black", command=lambda:botonEjecutar()).grid(row=5, column=3)
 botonCe=Button(miFrame, text="Cerrar", font=("arial", 20, "bold"), fg="black", command=lambda:botonCerrar()).grid(row=7, column=3)
 ventana.mainloop()
-
